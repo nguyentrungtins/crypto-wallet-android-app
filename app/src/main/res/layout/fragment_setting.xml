@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+    android:paddingBottom="25dp"
+    android:paddingLeft="25dp"
+    android:paddingRight="25dp"
+    android:background="?attr/background_color">
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/btn_lightmode">
+
+        <Button
+            android:id="@+id/btn_lightmode"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/text_button_color"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:backgroundTint="?attr/button_color"
+            android:text="Light Mode" />
+
+        <Button
+            android:id="@+id/btn_darkmode"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/button_color"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:backgroundTint="?attr/text_button_color"
+            android:text="Dark Mode" />
+
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/border_top_bottom"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/txt_logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng xuất"
+            android:textColor="?attr/text_color"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins500"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

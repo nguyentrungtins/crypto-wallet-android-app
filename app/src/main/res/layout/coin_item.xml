@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="12"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:background="@drawable/background_less_round">
+        <ImageView
+            android:id="@+id/coinImg"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:padding="1dp"
+            android:src="@drawable/toggle_uncheck"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="6dp"
+            android:layout_weight="2"
+            >
+            <TextView
+                android:id="@+id/coinName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bitcoin"
+                android:textColor="?attr/text_color"
+                android:textSize="16sp"
+                android:paddingStart="20dp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/poppins400"
+                />
+            <TextView
+                android:id="@+id/coinID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#btc"
+                android:textColor="?attr/text_color"
+                android:textSize="14sp"
+                android:paddingStart="20dp"
+                android:gravity="center_vertical"
+                android:fontFamily="@font/poppins400"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="5"
+            >
+            <TextView
+                android:id="@+id/coinPrice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:layout_weight="5"
+                android:fontFamily="@font/poppins500"
+                android:textColor="?attr/text_color"
+                android:text="20000$"/>
+            <TextView
+                android:id="@+id/coinLast24h"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="end"
+                android:layout_weight="5"
+                android:fontFamily="@font/poppins500"
+                android:textColor="?attr/text_color"
+                android:text="24h: +12%"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+
+</LinearLayout>
