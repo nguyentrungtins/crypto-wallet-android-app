@@ -18,7 +18,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 const val APIURL = "https://api.coingecko.com/"
-//const val APIURL = "https://jsonplaceholder.typicode.com/"
 
 class CoinsFragment : Fragment() {
 

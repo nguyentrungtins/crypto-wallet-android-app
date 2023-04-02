@@ -1,4 +1,4 @@
-package com.example.hien_android_final
+package com.watasolutions.w3_databinding_wm
 
 class DataStorage {
     companion object {

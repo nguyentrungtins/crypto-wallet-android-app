@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/mainBackground"
-    android:orientation="vertical"
-    android:fillViewport="true"
-    android:fitsSystemWindows="true"
+
     tools:context=".RegisterActivity">
 
     <RelativeLayout
@@ -37,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="26dp"
-                android:text="Register"
+                android:text="Sign Up"
                 android:textColor="#696969"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -57,7 +52,7 @@
                     app:hintEnabled="false">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/et_username"
+                        android:id="@+id/edtEmail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -91,7 +86,7 @@
                     app:passwordToggleEnabled="true">
 
                     <EditText
-                        android:id="@+id/et_password"
+                        android:id="@+id/edtPassword"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -101,6 +96,7 @@
                         android:drawableStart="@drawable/ic_lock"
                         android:drawableLeft="@drawable/ic_lock"
                         android:drawablePadding="12dp"
+                        android:paddingTop="10dp"
                         android:hint="Password"
                         android:imeOptions="actionDone"
                         android:inputType="textPassword"
@@ -121,13 +117,13 @@
                 android:text="Forgot password? No worries" />
 
             <Button
-                android:id="@+id/button_signin"
+                android:id="@+id/btnEnter"
                 style="@style/Button1"
                 android:layout_width="342dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="16dp"
-                android:text="Sign in" />
+                android:text="Register" />
 
             <LinearLayout
                 android:id="@+id/social_layout"
@@ -165,7 +161,7 @@
 
             <Button
                 style="@style/TextyButton"
-                android:id="@+id/button_signup"
+                android:id="@+id/btnRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -175,6 +171,4 @@
         </LinearLayout>
 
     </RelativeLayout>
-
-
-</ScrollView>
+</layout>

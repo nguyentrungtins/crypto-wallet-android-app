@@ -1,4 +1,6 @@
-package com.example.hien_android_final
+package com.watasolutions.w3_databinding_wm
+
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -52,7 +54,14 @@ class MainViewModel : ViewModel() {
         }
         _isSuccessEvent.postValue(true)
     }
-
+    fun checkLogin(): Boolean {
+        val findData = DataStorage.currentUser
+        Log.v("current user: ", findData.toString())
+        if (findData == null || findData.isEmpty()) {
+            return false
+        }
+        else return true
+    }
     fun registerCheck(email: String, password: String) {
         //kiem tra format email
         val isValidEmail = isEmailValid(email)

@@ -1,20 +1,25 @@
 package com.example.hien_android_final
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.example.hien_android_final.databinding.ActivityHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.watasolutions.w3_databinding_wm.MainViewModel
 
 class Home : AppCompatActivity() {
     // Bottom Navigation
     private lateinit var binding: ActivityHomeBinding
+    lateinit var viewModel: MainViewModel
     // Button Add new Event animation
     private var rotateOpen: Animation? = null  // Button Add new Event animation
     private var rotateClose: Animation? = null  // Button Add new Event animation
@@ -26,7 +31,6 @@ class Home : AppCompatActivity() {
     var btn_new_calendar:FloatingActionButton? = null
     var btn_new_event:FloatingActionButton? = null
     private var clicked: Boolean? = false
-    var themeClicked: Boolean? = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         init()
@@ -36,9 +40,18 @@ class Home : AppCompatActivity() {
             setTheme(R.style.Theme_Light)
         }
         super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
+
+        if(!viewModel.checkLogin()) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
 
         binding = ActivityHomeBinding.inflate(layoutInflater)
+
+//        listenerErrorEvent()
         setContentView(R.layout.activity_home)
+
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener(navListerner)
         supportFragmentManager.beginTransaction().replace(R.id.flFragment, CoinsFragment())
@@ -73,6 +86,12 @@ class Home : AppCompatActivity() {
         fromBottom = AnimationUtils.loadAnimation(this, R.anim.from_bottom_anim)
         toBottom = AnimationUtils.loadAnimation(this, R.anim.to_bottom_anim)
         clicked = true
+    }
+
+    private fun listenerErrorEvent() {
+        viewModel.isErrorEvent.observe(this) { errMsg ->
+            Toast.makeText(this, errMsg, Toast.LENGTH_SHORT).show()
+        }
     }
     private fun replaceFragment(fragment : Fragment){
 

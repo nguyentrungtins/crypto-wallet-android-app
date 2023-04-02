@@ -48,10 +48,11 @@ class SettingFragment : Fragment() {
         toggleGroup = view.findViewById(R.id.toggleGroup)
         toggleGroup?.addOnButtonCheckedListener(OnButtonCheckedListener { group, checkedId, isChecked ->
             Log.v("checkID", checkedId.toString())
+            Log.v("checkStatus", isChecked.toString())
             if (isChecked) {
                 if (checkedId == R.id.btn_lightmode) {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                } else if (checkedId == R.id.btn_darkmode){
+                } else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
                 }
             }
