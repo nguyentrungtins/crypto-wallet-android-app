@@ -62,6 +62,9 @@ class MainViewModel : ViewModel() {
         }
         else return true
     }
+
+
+
     fun registerCheck(email: String, password: String) {
         //kiem tra format email
         val isValidEmail = isEmailValid(email)

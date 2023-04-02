@@ -85,6 +85,8 @@ class LosersFragment : Fragment() {
         priceList.add(price + "$")
         priceLast24hList.add(priceLast24h + "%")
         imageURLList.add(imageURL)
+
+
     }
 
 

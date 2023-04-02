@@ -16,16 +16,6 @@
         android:checkedButton="@id/btn_lightmode">
 
         <Button
-            android:id="@+id/btn_darkmode"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:textColor="?attr/button_color"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:backgroundTint="?attr/text_button_color"
-            android:text="Dark Mode" />
-        <Button
             android:id="@+id/btn_lightmode"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -35,6 +25,17 @@
             android:textStyle="bold"
             android:backgroundTint="?attr/button_color"
             android:text="Light Mode" />
+
+        <Button
+            android:id="@+id/btn_darkmode"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/button_color"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:backgroundTint="?attr/text_button_color"
+            android:text="Dark Mode" />
 
     </com.google.android.material.button.MaterialButtonToggleGroup>
 
